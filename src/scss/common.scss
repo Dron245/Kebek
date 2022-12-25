@@ -1,0 +1,10 @@
+// Заголовки, общие БЄМ блоки и проче...
+button {
+	padding-top: rem(13);
+	padding-bottom: rem(13);
+	background: $maingreen;
+	color: white;
+	font-weight: 500;
+	@include adaptiveValue("font-size", 18, 16);
+	line-height: math.div(24 , 18);
+}
