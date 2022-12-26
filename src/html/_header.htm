@@ -1,11 +1,23 @@
 <header class="header">
 	<div class="header__container">
 		<div class="header__logo"><img src="@img/header/logo.svg" alt=""></div>
-		<div class="header__table-button"></div>
-		<a href="#" data-da=".header__actions, 1024.98, 1" class="header__city">Нур-Султан</a>
+		<div class="header__table-button">
+			<div class="header__country">
+				<div class="header__city-block">
+					<a href="#" data-da=".header__actions, 1024.98, 1" class="header__city">Нур-Султан</a>
+					<div data-da=".header__actions, 1024.98, 2" class="header__city-questions city-questions">
+						<div class="city-questions__question">Ваш город <span>Нур-Султан?</span></div>
+						<div class="city-questions__buttons">
+							<button type="submit" class="city-questions__button">Да</button>
+							<button type="submit" class="city-questions__button">Изменить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="header__actions">
-			<div class="header__menu menu">
-				<button data-da=".header__table-button, 1024.98, 1" type="button" class="menu__icon icon-menu"><span></span></button>
+			<div class="header__menu menu"> 
+			<button data-da=".header__table-button, 1024.98, 1" type="button" class="menu__icon icon-menu"><span></span></button>
 				<nav class="menu__body">
 					<ul class="menu__list">
 						<li class="menu__item"><a href="" class="menu__link">Главная</a></li>
