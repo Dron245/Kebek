@@ -8,6 +8,10 @@
 		@media (min-width:$mobile){
 			 display: flex; 
 		}
+		@media (max-width:$mobile){
+			 display: flex;
+			 flex-direction: column-reverse;; 
+		}
 	}
 }
 .main-block {
@@ -21,6 +25,16 @@
 
 	// .main-block__content
 
+	&__content {
+		// @include adaptiveValue("margin-top", 280, 115,1920,1024,1);
+		// margin-right: -185px;
+		flex: 0 0 100%; 
+		//display: flex;
+		@media (max-width:$mobile){
+			 margin-top: -140px; 
+		}
+	}
+
 	&__body {
 		//padding: 50px 0px 50px 0px;
 		@include adaptiveValue("padding-top", 280, 115,1920,1024,1);
@@ -29,15 +43,8 @@
 			 width: 68%;
 			 padding-right: 10px;
 		}
-	}
-
-	&__content {
-		// @include adaptiveValue("margin-top", 280, 115,1920,1024,1);
-		// margin-right: -185px;
-		flex: 0 0 100%; 
-		//display: flex;
-		@media (min-width:$mobile){
-			 
+		@media (max-width:$mobile){
+			 padding: 0; 
 		}
 	}
 
@@ -63,12 +70,17 @@
 
 	&__text {
 		color: $maintext;
-		@include adaptiveValue("font-size", 21, 16);
+		@include adaptiveValue("font-size", 21, 16,1920,1024,1);
 		line-height: 1.4;
 		font-weight: 300;
 		margin-bottom: 30px;
 		@media (max-width:$tablet){
 			margin-bottom: 20px;
+		}
+		@media (max-width:$mobile){
+			 span {
+				display: none;
+			 } 
 		}
 	}
 
@@ -84,7 +96,11 @@
 		padding-right: 107.94px;
 		margin-right: 24px;
 		@media (max-width:$mobile){
-			 width: 100%;
+			display: block;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+			text-align: center;
 		}
 	}
 
@@ -101,6 +117,9 @@
 	// .main-block__img
 
 	&__img {
+		@media (max-width:$mobile){
+			 transform: rotate(270deg) translate(120px, 0px) rotateX(180deg) scale(1.15);; 
+		}
 		@media (min-width:$mobile){
 		position: relative;
 		//flex: 0 0 calc(((100vw - 32px) * 0.32) + 16px);
@@ -108,7 +127,6 @@
 		transform: translate(-100%, 0px);
 		}
 		// flex: 0 0 percent(950, 1920);
-		// position:relative;
 		
 		img {
 			max-width: 100%;
@@ -130,4 +148,68 @@
 }
 
 
-//====================================================================================================
+//======SITE==============================================================================================
+
+.page {
+
+	// .page__site
+
+	&__site {
+		background: url('../img/main/bg1.png') top / cover no-repeat;
+		//background-size: auto;
+		@include adaptiveValue("margin-top", -100,40,1920,375,1 );
+	}
+}
+.site {
+
+	// .site__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+		//padding-top: 207px;
+		//padding-bottom: 207px;
+		@include adaptiveValue("padding-top", 207, 100,1920,375,1);
+		@include adaptiveValue("padding-bottom", 207, 100,1920,375,1);
+		//column-gap: rem(140);
+		//flex-wrap: wrap;
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 gap: rem(16);
+		}
+	}
+
+	// .site__name
+
+	&__name {
+		@include adaptiveValue("font-size", 65, 40,1920,375,1);
+		line-height: 1.4;
+		color: $maingreen;
+		margin-right: 50px;
+		span {
+			color: $mainColor;
+		}
+		@media (max-width:$mobile){
+			 line-height: 1.1; 
+		}
+	}
+
+	// .site__link
+
+	&__link {
+	}
+
+	// .site__text
+
+	&__text {
+		font-weight: 300;
+		line-height: 1.4;
+		@include adaptiveValue("font-size", 30, 16,1920,375,1);
+		padding-right: 290px;
+		@media (max-width:$mobile){
+			 padding-right: 0;
+			 text-align: center;
+		}
+	}
+}
+
