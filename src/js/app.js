@@ -53,7 +53,7 @@ flsFunctions.isWebp();
 Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+ flsFunctions.showMore();
 
 /*
 Попапы
@@ -114,7 +114,7 @@ flsForms.formFieldsInit({
 Документация плагина: https://refreshless.com/nouislider/
 Сниппет (HTML): range
 */
-// import "./files/forms/range.js";
+ import "./files/forms/range.js";
 
 /* Модуль работы с подсказками (tippy) */
 /*
