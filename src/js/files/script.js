@@ -3,6 +3,12 @@ import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
+const line =document.querySelectorAll('.content-order__line');
+const text =document.querySelectorAll('.content-order__text:not(:last-child)');
+
+
+
+
 document.addEventListener('click', documentactions)
 
 function documentactions (e) {

@@ -7,6 +7,7 @@ import * as noUiSlider from 'nouislider';
 // Подключение cтилей из node_modules
 // import 'nouislider/dist/nouislider.css';
 
+
 export function rangeInit() {
 	const priceSlider = document.querySelectorAll('.range');
 	priceSlider.forEach(element => {
@@ -16,7 +17,7 @@ export function rangeInit() {
 			noUiSlider.create(element, {
 				start: 1,
 				step: 1,
-				tooltips: [wNumb({decimals: 1})],
+				tooltips: true/*wNumb({decimals:1})*/,
 				connect: [true, false],
 				range: {
 					'min': [1],
@@ -40,6 +41,19 @@ export function rangeInit() {
 				}
 				priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
 			}
+			const noUi = document.querySelectorAll('.noUi-tooltip');
+
+			element.noUiSlider.on('update', function(){
+				const test = element.closest('.products__item');
+				let dec = test.querySelector('.product__decimal');
+				
+				//console.log(dec);
+				const productCostPerKG = test.querySelector('.product__button-cost').firstChild.innerHTML;
+				dec.innerHTML = productCostPerKG * 1000 * test.querySelector('.noUi-tooltip').innerHTML;
+				noUi.forEach(element => {
+					element.innerHTML = Math.trunc(element.innerHTML)
+				});
+				})
 		}
 	});
 }
