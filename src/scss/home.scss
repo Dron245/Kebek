@@ -648,7 +648,7 @@
 	// .page__order
 
 	&__order {
-		margin-top: 50px;
+		margin-top: -50px;
 	}
 }
 .order {
@@ -677,7 +677,7 @@
 
 	&__item {
 		position: relative;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 		display: flex;
 		@include adaptiveValue("gap", 36.75, 0,1920,1100,1);
 		align-items: center;
@@ -748,15 +748,15 @@
 	// .content-order__item-top
 
 	&__item-top {
-		display: grid;
+		//display: grid;
 		position: relative;
 		z-index: 1;
 		background: white;
-		grid-template-columns: 1fr 440px;
+		//grid-template-columns: 1fr 440px;
 		margin-bottom: 20px;
 		border-bottom: 1px solid #eee;
 		@media (max-width:$mobile){
-			grid-template-columns: 1fr 89.715%;
+			//grid-template-columns: 1fr 89.715%;
 		}
 	}
 
@@ -779,23 +779,36 @@
 
 	&__text {
 		position: relative;
+		display: flex;
+		
+		&::before{
+				content:'';
+				position: absolute;
+				flex: 0 0 16px;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: 3px solid $maingreen;
+				top: 10px;
+				background-color: white;
+			}
 		&:not(:last-child) {
 			
-			// &::after{
-			// 	content:'';
-			// 	position: absolute;
-			// 	height: 100%;
-			// 	width: 2px;
-			// 	background-color: #eee;
-			// 	top: 16px;
+			&::after{
+				content:'';
+				position: absolute;
+				height: 100%;
+				width: 2px;
+				background-color: #eee;
+				top: 16px;
+				z-index: -1;
+				left: 7px;
 				
-			// 	left: -7.2%;
-				
-			// 	@media (max-width:$mobile){
-			// 		//position: relative;
+				@media (max-width:$mobile){
+					//position: relative;
 					
-			// 	}
-			// }
+				}
+			}
 		}
 	}
 
@@ -803,27 +816,29 @@
 
 	&__point {
 		margin-bottom: 20px;
+		padding-left: 37px;
 	}
 
 	&__pretitle {
-		font-size: rem(21);
+		@include adaptiveValue("font-size", 21, 16,1920,375,1);
 		line-height: 1.4;
 		margin-bottom: 8px;
 	}
 	// .content-order__subtitle
 
 	&__subtitle {
+		@include adaptiveValue("font-size", 18, 16,1920,375,1);
 		font-weight: 300;
 		line-height: 1.4;
 		color: $maintext;
-		font-size: rem(18);
+		
 	}
 
 	// .content-order__item-bottom
 
 	&__item-bottom {
-		display: grid;
-		grid-template-columns: 1fr 440px;
+		display: flex;
+		//grid-template-columns: 1fr 440px;
 		@media (max-width:$mobile){
 			grid-template-columns: 1fr 89.715%;
 		}
@@ -832,14 +847,14 @@
 	// .content-order__info-img
 
 	&__info-img {
-		padding-right: 20px;
+		padding-right: 18px;
 		margin-top: 3px;
 	}
 
 	// .content-order__note
 
 	&__note {
-		font-size: 18px;
+		@include adaptiveValue("font-size", 18, 16,1920,375,1);
 		line-height: 1.4;
 		font-weight: 300;
 		color: $maintext;
