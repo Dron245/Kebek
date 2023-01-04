@@ -10,7 +10,7 @@
 		}
 		@media (max-width:$mobile){
 			 display: flex;
-			 flex-direction: column-reverse;; 
+			 flex-direction: column-reverse;
 		}
 	}
 }
@@ -105,6 +105,7 @@
 		padding-left: 107.94px;
 		padding-right: 107.94px;
 		margin-right: 24px;
+		
 		@media (max-width:$mobile){
 			display: block;
 			margin-right: 0;
@@ -116,10 +117,13 @@
 
 	&__tel {
 		font-weight: 500;
-		line-height: 1.5;
+		line-height: 1.333;
 		font-size: rem(18);
 		color: $maingreen;
 		white-space: nowrap;
+		border: 1px solid #219653;
+		border-radius: 3px;
+		padding: 13px 71px;
 		@media (max-width:$mobile){
 			 display: none; 
 		}
@@ -861,6 +865,176 @@
 		span {
 			color: $maingreen;
 		}
+	}
+}
+
+/*=============BESTSALE=============*/
+
+.page {
+
+	// .page__bastsale
+
+	&__bastsale {
+		position: relative;
+		@include adaptiveValue("margin-top", 114, 16,1920,1024,1);
+		overflow: hidden;
+		@media (min-width:$mobile){
+			 display: flex; 
+		}
+		@media (max-width:$mobile){
+			 display: flex;
+			 flex-direction: column-reverse;; 
+		}
+		&::before{
+			content:'';
+			position: absolute;
+			//top: 100%;
+			bottom: 0;
+			width: 100%;
+			height: 77.033%;
+			background: #924646;
+			//z-index: 3;
+		}
+	}
+}
+.bastsale {
+
+	// .bastsale__content
+
+	&__content {
+		flex: 0 0 100%; 
+		display: flex;
+		//background: #fafafa;
+		@include adaptiveValue("margin-top", 147, 27,1920,1024,1);
+		position: relative;
+		z-index: 2;
+		
+		@media (max-width:$mobile){
+		//	margin-top: -140px; 
+		}
+	}
+
+	&__bg {
+		background: #b44747;
+		//position: relative;
+		z-index: 0;
+		position: absolute;
+		 	top: 0;
+		 	left: 0;
+		 	width: 100%;
+		 	height: 100%;
+	}
+
+	// .bastsale__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+		position: relative;
+		z-index: 2;
+	}
+
+	// .bastsale__body
+
+	&__body {
+		@media (min-width:$mobile){
+			padding: 100px 10px 100px 0px;
+			width: 66.95%;
+		@media (max-width:$tablet){
+			padding: 90px 10px 90px 0px;
+		}
+			
+	  }
+	  @media (max-width:$mobile){
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			text-align: center; 
+	  }
+	}
+
+	// .bastsale__title
+
+	&__title {
+		@include adaptiveValue("font-size", 50, 29,1920,375,1);
+		line-height: 1.3;
+		@media (max-width:$mobile){
+			 line-height: 1.1;
+			 
+		}
+	}
+
+	// .bastsale__text
+
+	&__text {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.4;
+		margin: 20px 0px 46px 0px;
+		@media (max-width:$mobile){
+			 margin: 16px 0px 20px 0px; 
+		}
+	}
+	
+	// .bastsale__img
+
+	&__img {
+		
+		//display: none;
+		//@media (min-width:$mobile){
+			display: block;
+			position: relative;
+			z-index: 1;
+			//flex: 0 0 calc(((100vw - 32px) * 0.44386) + 16px);
+			//flex:0 0 44.4799%;
+			flex: 0 0 44.4799vw;
+			padding: 0 0 33.334% 0;
+			transform: translate(-100%, 0px);
+			//}
+		@media (max-width: em(1386)){
+			transform: translate(-60%, 0px);
+			
+		}
+			
+			img {
+				max-width: 100%;
+				height: auto;
+				min-height: 462px;
+				@media (min-width:$mobile){
+					position: absolute;
+					width: 100%;
+					//height: 100%;
+					//top: 0;
+					left: 0;
+					bottom: 0;
+					object-fit: cover; 
+				}
+			}
+			//flex: 0 0 calc(50vw - 10px);
+			// @media (min-width:1212px){
+			// 	//flex: 0 0 calc(50vw - (0.68 - 0.5) * 1180px);
+				
+			// }
+	}
+}
+.main-block {
+
+	// .main-block__actions
+
+	&__actions {
+		@media (max-width:$mobile){
+			 width: 100%; 
+		}
+	}
+
+	// .main-block__button
+
+	&__button {
+	}
+
+	// .main-block__tel
+
+	&__tel {
 	}
 }
 
