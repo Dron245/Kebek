@@ -20,4 +20,9 @@ function documentactions (e) {
 	if (!target.closest('.header__city')) {
 		document.querySelector('.header__city-questions').classList.remove('_active')
 	}
+	if (target.closest('.spollers__title')) {
+		const asd = target.closest('.spollers__item')
+		console.log(asd);
+		asd.querySelector('.spollers__img').classList.toggle('_active')
+	}
 }
