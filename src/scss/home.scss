@@ -551,15 +551,21 @@
 
 	&__img {
 		display: flex;
+		//padding-bottom: percent(173,480);
 		justify-content: center;
-		@include adaptiveValue("height", 160, 128,1920,1024,1);
-		img {
-			max-width: 100%;
-			height: auto;
-		}
+		
+		//@include adaptiveValue("height", 160, 128,1920,1024,1);
+		// img {
+		// 	max-width: 100%;
+		// 	height: auto;
+		// }
 	}
 
-	// .product__title
+	&__ibg {
+		width: percent(300,400);
+		padding-bottom: percent(160,400);
+	}
+	
 
 	&__title {
 		font-weight: 500;
