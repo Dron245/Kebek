@@ -697,11 +697,13 @@
 		position: relative;
 		margin-bottom: 20px;
 		display: flex;
-		
-		@include adaptiveValue("gap", 36.75, 0,1920,1100,1);
+		justify-content: space-between;
+		//@include adaptiveValue("gap", 36.75, 0,1920,1100,1);
 		align-items: center;
 		padding: 0px 100px;
-		
+		@media (max-width:$tablet){
+			justify-content: flex-end;
+		}
 		@media (max-width:$mobile){
 			 display: block;
 			 padding: 0;
@@ -710,7 +712,7 @@
 
 		&_imgr {
 			@media (max-width:$tablet){
-				@include adaptiveValue("padding-left", 317, 200,1024,768,1);
+				//@include adaptiveValue("padding-left", 317, 200,1024,768,1);
 			}
 			@media (max-width:$mobile){
 				 padding: 0; 
@@ -721,7 +723,7 @@
 
 		&_imgl {
 			flex-direction: row-reverse;
-			@include adaptiveValue("padding-right", 317, 200,1024,768,1);
+			//@include adaptiveValue("padding-right", 317, 200,1024,768,1);
 			& .order__img {
 				@media (max-width:$tablet){
 					right: 0;
@@ -763,7 +765,7 @@
 		@media (max-width:$tablet){
 			flex: 0 0 43.182%;
 			position: absolute;
-			left: -20px;
+			left: 0px;
 			top: -50px;
 		}
 		@media (max-width:$mobile){
@@ -1018,6 +1020,21 @@
 			flex:0 0 36.23%;
 			padding-bottom: 45%;
 			//display: none;
+			& .ded01{
+				display: none;
+			  }
+			  & .ded02{
+				display: block;
+			  }
+		}
+
+		@media (min-width:em(1386)){
+			& .ded01{
+				display: block;
+			  }
+			  & .ded02{
+				display: none;
+			  }
 		}
 
 		@media (max-width:$mobile){
@@ -1038,15 +1055,10 @@
 					object-fit: cover; 
 				}
 				@media (max-width: em(1386)){
-					  &:first-child{
-						display: none;
-					  }
+					  
+					  
 				}
-				@media (min-width:em(1386)){
-					&:last-child{
-						display: none;
-					}
-				}
+				
 			}
 			//flex: 0 0 calc(50vw - 10px);
 			// @media (min-width:1212px){
